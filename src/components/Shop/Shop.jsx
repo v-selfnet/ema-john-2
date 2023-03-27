@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 
@@ -18,7 +19,7 @@ const Shop = () => {
     and then [props] receive this [property/props function] */
     const [cart, setCart] = useState([]);
     const addCart = (product) => {
-        console.log('added cart', product)
+        // console.log('added cart', product)
         const newCart = [...cart, product];
         setCart(newCart);
     }
@@ -35,8 +36,10 @@ const Shop = () => {
                 }
             </div>
             <div className="cart">
-                <h4>Order Summery</h4>
-                <p>Selected Items: {cart.length}</p>
+                {/* bellow two line move in Cart.jsx */}
+                {/* <h4>Order Summery</h4>
+                <p>Selected Items: {cart.length}</p> */}
+                <Cart cart={cart}></Cart>
             </div>
         </div>
     );
